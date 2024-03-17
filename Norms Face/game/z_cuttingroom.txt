@@ -1,0 +1,28 @@
+####Cutting Room
+
+##Game play mirror and face
+
+    show mirror zorder 2:
+        zoom 0.75
+        xalign 0.99
+        yalign 0.02
+    with Dissolve(0.5)
+
+    show skinoverlay zorder 3:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+    show faceoverlay zorder 4:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+    show hairoverlay zorder 5:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+
+
+##Title Screen

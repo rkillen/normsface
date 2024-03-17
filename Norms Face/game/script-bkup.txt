@@ -1,0 +1,818 @@
+﻿######## This is the script for Norm's Face
+
+#### Declare characters used by this game.
+#### The color argument colorizes the name of the character.(not used)
+
+define n = Character(_("Norm"), color="#c8ffc8")
+define t = Character(_("Tanya"), color="#c8c8ff")
+
+#### Screens [not needed! - zorder works - saving just in case]
+
+#screen menu():
+#    add "new background"
+#    add "far"
+#    add "mid"
+#    add "close"
+#    add "sfx"
+
+####Crossfading Image code
+
+transform LiveDissolve(spriteB, duration=0.5):
+    DynamicImage(spriteB) with Dissolve(duration, alpha=True)
+
+#### Animations
+
+
+####Transitions
+
+define bg_transition = {"master" : Fade(0.5, 0.0, 0.5,  color="#FFFFFF")}
+
+
+######## START HERE!
+
+label start:
+    $ mlevel = 0
+    $ glevel = 0
+    $ alevel = 0
+    $ levelsum = 0
+
+## Start by playing some music.
+    play music "norms face.ogg" volume 0.35
+
+    scene bg gray
+    with fade
+
+    show normani1 zorder 3:
+        xalign 0.5
+        yalign 1.0
+    with Dissolve(0.5)
+    pause 0.3
+
+    show mirani1 zorder 2:
+        xalign 0.5
+        yalign 0.25
+    with Dissolve(0.5)
+
+    "Norm’s day started out pretty normal, except for the song in his head and the fact that he couldn’t find his face."
+
+    show normani1 at Move((0.5, 0.0), (0.5, -0.15), 1.0, xanchor=0.5, yanchor=-0.5):
+        ease 1.0 zoom 1.5
+
+    show mirani1:
+        ease 1.0 zoom 1.5
+
+    "He searched the bathroom mirror, looking everywhere. In all the corners. Behind the shower curtain. He even squinted through the door behind him, thinking his face might still be in bed. But it wasn’t. It was just gone."
+
+    hide mirani1
+    with Dissolve(0.5)
+
+    show teaani1 zorder 2:
+        zoom 0.75
+        xalign 0.5
+        yalign 0.1
+    with Dissolve(0.5)
+
+    "Norm thought about this over a lovely cup of tea. But as lovely as the tea was, he couldn't help but feel a little worried."
+
+    "Not about shaving or checking his hair. He didn't care about that stuff. But he did enjoy seeing his face in the pots and pans and windows... and in cups of tea, for that matter.  He worried that without it he might forget himself."
+
+    hide teaani1
+    with Dissolve(0.5)
+
+    show mirani1 zorder 2:
+        xalign 0.5
+        yalign 0.25
+    with Dissolve(0.5)
+
+    "So Norm decided to go find it."
+
+    "He grabbed some biscuits and a pouch of tea leaves (just in case) and stumbled awkwardly through the mirror, slipping on the towel he forgot to pack."
+
+    show normani1 at Move((0.5, -0.15), (0.5, 0.3), 5.0, xanchor=0.5, yanchor=-0.5):
+        ease 5.0 zoom 0.7
+
+    show mirani1:
+        ease 5.0 zoom 4.0
+
+#### temporary
+
+#    scene
+#    scene bg gray
+#    with bg_transition
+
+#    show titleani
+#    with Dissolve(2.0)
+
+#    pause 4.0
+
+#    hide titleani
+#    with Dissolve(2.0)
+
+#    pause 4.0
+
+######## - first decision point
+
+    pause 2.0
+
+    scene bg gray
+    with bg_transition
+
+    pause 1.0
+
+    show seaani1 zorder 1
+    with Dissolve(0.5)
+
+    show sunani1 zorder 2:
+        xalign 0.15
+        yalign 0.1
+    with Dissolve(0.5)
+
+    show mirror zorder 2:
+        zoom 0.75
+        xalign 0.99
+        yalign 0.02
+    with Dissolve(0.5)
+
+    show skinoverlay zorder 3:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+    show faceoverlay zorder 4:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+    show hairoverlay zorder 5:
+        xalign 0.99
+        yalign 0.02
+        alpha 0.0
+
+    "Straightening up on the other side, Norm blinked at a bright sun over a calm sea stretched out before him."
+
+    show gulani1 zorder 3:
+        zoom 0.9
+        xalign 0.375
+        yalign 0.60
+    with Dissolve(0.5)
+
+    show pathmar zorder 2:
+        zoom 1.1
+        xalign 0.26
+        yalign 0.58
+    with Dissolve(0.5)
+
+    show pathala zorder 2:
+        zoom 1.1
+        xalign 0.76
+        yalign 0.58
+    with Dissolve(0.5)
+
+    show pathgra zorder 2:
+        zoom 1.1
+        xalign 0.5
+        yalign 0.58
+    with Dissolve(0.5)
+
+    "A couple of seagulls, preening in the quiet surf, were surprised by his sudden appearance, but even more surprised by the three paths of stone abruptly rising around them."
+
+    "A chain of smooth black marble pointed a little to the left. Alabaster gleamed like a ribbon of snow on the right. And in the middle, a path of speckled, gray granite led straight to the horizon."
+
+## Flying gulls
+
+    hide gulani1
+    with Dissolve(0.2)
+
+    show gullfly1 zorder 3:
+        xalign 0.40
+        yalign 0.35
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    hide gullfly1
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    show gullfly2 zorder 3:
+        xalign 0.55
+        yalign 0.2
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    hide gullfly2
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    show gullfly1 zorder 3:
+        xalign 0.75
+        yalign 0.1
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    hide gullfly1
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    show gullfly2 zorder 3:
+        xalign 0.95
+        yalign 0.1
+    with Dissolve(0.2)
+
+    pause 0.1
+
+    hide gullfly2
+    with Dissolve(0.2)
+
+    "The gulls flew off in a huff."
+
+    "\"Huh,\" Norm thought. He might have come up with more thoughts, but at that particular moment, he was distracted by the song that was still playing in his head, apparently on loop. It was soft and simple and reminded him of a lovely, light shade of green he couldn’t quite name."
+
+    hide seaani1
+    with Dissolve(0.5)
+
+    hide sunani1
+    with Dissolve(0.5)
+
+    show pathmar:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+    show pathala:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+    show pathgra:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+    "The song tugged him toward the stones."
+
+    jump r1repeat
+
+label firstchoice:
+
+    hide friends
+    with Dissolve(0.5)
+
+    hide tabani
+    with Dissolve(0.5)
+
+    show bg gray
+    with Dissolve(0.5)
+
+    show pathmar zorder 2:
+        zoom 1.1
+        xalign 0.26
+        yalign 0.58
+    with Dissolve(0.5)
+
+    show pathala zorder 2:
+        zoom 1.1
+        xalign 0.76
+        yalign 0.58
+    with Dissolve(0.5)
+
+    show pathgra zorder 2:
+        zoom 1.1
+        xalign 0.5
+        yalign 0.58
+    with Dissolve(0.5)
+
+    hide pathmar
+    show pathmar:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+    hide pathgra
+    show pathala:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+    hide pathgra
+    show pathgra:
+        linear 2.0 ypos 0.2 zoom 2.0
+
+label r1repeat:
+
+    show feetani1 zorder 2:
+        xalign 0.5
+        yalign 1.3
+    with Dissolve(1.5)
+
+    "His bare feet sank just a little into the warm, wet sand as he considered the three paths before him."
+
+    menu:
+
+        "The black stone was warm and inviting—an Irish coffee, smooth jazz, a friendly kiss on the cheek that lingers just a little bit longer than necessary.":
+
+            hide pathala
+            with Dissolve(0.5)
+
+            hide pathgra
+            with Dissolve(0.5)
+
+            show pathmar:
+                ease 2.0 xpos 0.35 ypos 0.27 zoom 3.0
+
+            jump marble
+
+        "Granite formed a sturdy road built for heroes and martyrs.":
+
+            jump granite
+
+        "The white path felt cool and clear-headed, like the bright smile of a monk, unclouded by worry or strife.":
+
+            jump alabaster
+
+######## - MARBLE / LIBERTINE PATH
+
+label marble:
+
+    "Approaching the polished black stone, Norm thought he saw his face peering back at him. But in that instant, it raced ahead along the dark path out to sea."
+
+    "He leapt in pursuit."
+
+    hide feetani1
+    with Dissolve(0.5)
+
+    hide pathmar
+    with Dissolve(0.5)
+
+#### Marble Table
+
+    show bg gray-dk
+    with Dissolve(1.0)
+
+    show tabani zorder 5:
+        xalign 0.5
+        yalign 1.05
+    with Dissolve(0.5)
+
+    "The moment his feet touched the stone, Norm found himself at a black marble table. Sitting on top was his book of joy, its pages teeming with food, music, books, presents, sunsets, lovers, and mountain streams bursting with fat trout."
+
+    show friends zorder 1:
+        yanchor -0.1
+        alpha 1.0
+    with Dissolve(0.5)
+
+    "Surrounding him were 1,000 past, or future, friends. He wasn’t quite sure."
+
+    "Remembering his purpose, he looked down at the book. \“Maybe you’re in here.\” He held his breath as it opened."
+
+#### LIBERTINE CHALLENGE
+
+    menu:
+
+        "table for one":
+            show faceoverlay:
+                alpha 0.05
+            show friends:
+                alpha 0.6
+            "Norm sits alone in a dark corner of the gourmet restaurant, basking in the freedom to devour whatever delights his tongue."
+
+        "close the book":
+            "Norm doesn't feel up to it. Upon closing the book he finds himself back at the beach."
+
+            if glevel == 1:
+                jump mar_or_ala
+            elif alevel == 1:
+                jump mar_or_gra
+
+            jump firstchoice
+
+    menu:
+
+        "Minecraft binge":
+            show faceoverlay:
+                alpha 0.15
+            show friends:
+                alpha 0.3
+            "Norm loses track of days (and at least one meeting) as he digs for diamonds, builds grand fortresses, and battles a multitude of evil things."
+
+        "close the book":
+            "Norm doesn't feel up to it. Upon closing the book he finds himself back at the beach."
+
+    menu:
+
+        "fly fishing on Christmas Island":
+            show faceoverlay:
+                alpha 0.35
+            show friends:
+                alpha 0.15
+            "Thigh deep on the salt flats, Norm lands a powerful bonefish, justifying his decision to skip the class reunion. \”They’d all rather be me.\” he chuckles to himself."
+
+        "close the book":
+            jump contmar
+
+    menu:
+
+        "the good stuff":
+            show faceoverlay:
+                alpha 1.0
+            show friends:
+                alpha 0.07
+            "Norm slides his bottle of $300 Macallan from its hiding place. \“Too delicious to share,\” he whispers to himself."
+
+        "close the book":
+            jump contmar
+
+    menu:
+
+        "Norm stalks the casino, voraciously hunting his next thrill. Each streak, flush and blackjack electrifies him.":
+            jump winmar
+
+        "close the book":
+            "Norm tries to close the book, but nonetheless ends up outside a casino, bathed in pink neon. His appetites had grown stronger than his will. \”Well, since I’m already here…\”"
+            "He stalks the casino, voraciously hunting his next thrill."
+            jump winmar
+
+## ...and here.
+
+
+label contmar:
+
+    "Norm paused, uneasy. Looking around the room, he noticed that some of his friends had left. In their place stood mirrors containing his face, eager and beckoning."
+
+    "As he approached, his reflection turned and ran back to the beach, where Norm’s bare feet sank just a little into the warm, wet sand."
+
+    "The black stones slid quietly under the water, leaving paths of alabaster and granite before him."
+
+    $ mlevel += 1
+    $ levelsum += 1
+
+    if levelsum == 3:
+        jump codamar
+    elif glevel == 1:
+        jump faceala
+    elif alevel == 1:
+        jump facegra
+
+    jump gra_or_ala
+
+######## - losing after "winning' the libertine challenge
+
+
+label winmar:
+
+    "Norm’s whole body buzzed in the afterglow of his indulgences. He pushed away from the table and leaned back, bloated with satisfaction. \"This is the best, right? This is what life is all about.\""
+
+    show friends-mir zorder 1:
+        yanchor -0.1
+        alpha 1.0
+    with Dissolve(0.5)
+
+    hide friends
+
+    "He smiled up at his friends, only then realizing that they had all left, leaving a thousand mirrors in their place. In each of them, the words \“YOU WIN\” appeared from the other side of the fogged glass. When it cleared, 1,000 reflections stared back at him, sated but sad."
+
+return
+
+######## - GRANITE / MARTYR PATH
+
+
+label granite:
+    scene bg4
+    show twilight angry
+
+    "Just enough water remained on the granite’s rough surface for Norm to make out his mottled reflection. With this encouragement, he stepped forward onto the long, gray track."
+
+    "It was solid under his feet. And with each stride forward, a memory came to life."
+
+    "He crawled along the floor outside his 2nd grade classroom, gathering Michelle’s papers, scattered by a heartless 5th grader who was still laughing at his own joke as he walked away. Michelle’s blue eyes welled with gratitude."
+
+    "He ran 15 minutes through the hard Pennsylvania rain to get an umbrella for Rusty, who didn’t want to ruin her hair getting back to the dorm."
+
+    "He drove Scott and his dog, Jack, to the vet, standing close when the hard choice had to be made."
+
+    "Reliving these memories gave Norm a sense of purpose. And as he continued to march down the path, memories gave way to new opportunities to be heroic. He smiled inwardly at the rush he could feel coming as he earned the praise of others."
+
+    "Walking home from the store, Norm sees his neighbor, Bud, cleaning up his yard after the recent storms."
+
+    menu:
+
+        "Walking home from the store, Norm sees his neighbor, Bud, cleaning up his yard after the recent storms."
+  
+        "He has nothing else to do, and offers to help.":
+
+            "answer 1a"
+
+        "Norm keeps his eyes on the road and walks on by.":
+
+            "answer 1b"
+
+    menu:
+
+        "A young mother at the cafe seems desperate and exhausted."
+
+        "Norm offers to read a story to the kids while she grabs a table for herself.":
+
+            "answer 2a"
+
+        "Choking down his guilt, Norm watches cat videos on his phone.":
+
+            "answer 2b"
+
+    menu:
+
+        "Norm notices downed branches from another storm in the neighbor’s yard."
+
+        "Knowing how much Bud will appreciate the help, Norm grabs his wheelbarrow and cleans the yard before he gets home from work.":
+
+            "answer 3a"
+
+        "Norm goes home to organize his sweaters.":
+
+            jump contgra
+
+    menu:
+
+        "Anna, Norm’s coworker, complains that their online filing system has become a mess and is slowing everybody down."
+
+        "Seeing an opportunity to be a hero, Norm spends the entire weekend, restructuring the archive.":
+
+            "answer 3a"
+
+        "Not my problem. Not my monkeys.":
+
+            jump contgra
+
+    menu:
+
+        "Even though Bud told Norm that he shouldn’t clean up his yard for him, the leaves are deep."
+
+        "Norm grabs a rake, feeling the warm rush that Bud’s appreciation will bring.":
+
+            jump wingra
+
+        "Norm walks away.":
+
+            jump wingra
+
+
+label contgra:
+
+    "Granite continues."
+
+    $ glevel += 1
+    $ levelsum += 1
+
+    if levelsum == 3:
+        jump codagra
+    elif mlevel == 1:
+        jump faceala
+    elif alevel == 1:
+        jump facemar
+
+    jump mar_or_ala
+
+
+label wingra:
+
+    "Norm was confused. All he did was give pieces of himself to others and ask only to be appreciated in return. But it was getting harder and harder to find others who would accept his pieces."
+
+    "And now all that was left in the mirror were reflections of those he had given to, their faces turning away."
+
+return
+
+######## - ALABASTER / ASCETIC PATH
+
+
+label alabaster:
+    scene bg4
+    show twilight angry
+
+    "Just as it seemed, the translucent white stone was cool on Norm’s feet. He took slow steps, led by his reflection, a few paces ahead. They both enjoyed the waves gently lapping at the stones. 
+The two seagulls, now gliding on a light breeze, eyed him suspiciously."
+
+    "So when the sea changed, first to snow, then desert, then a lovely little cafe in Tuscany, then to a clearing by a small mountain lake, the gulls squawked in protest and flew off to find that cafe. Norm paused."
+
+    "He’d been here before. When Jill walked out and his promotion fell through and he was feeling flabby, Norm spent a day here trying to just let go. \"Maybe that’s what I need,\" he thought."
+
+    "He climbed onto a large boulder and peered into the still water below him. \"That’s what I need, right?\" He could just make out his reflection, already deep in meditation."
+
+    "\"Okay, let’s do this.\""
+
+
+## Ascetic Challenge
+
+    menu:
+
+        "Release your animal desires (abstinence, requires discipline) -(not a choice, but an offering that brings lightness)."
+
+        "Yes":
+
+            "1a"
+
+        "no":
+
+            "1b"
+
+    menu:
+
+        "Release your baggage (things weighing you down) or walk away,"
+
+        "Yes":
+
+            "2a"
+
+        "no":
+
+            "2b"
+
+    menu:
+
+        "Release your ego (desire to elicit praise) or walk away."
+
+        "Yes":
+
+            "3a"
+
+        "no":
+
+            jump contala
+
+    menu:
+
+        "Release your attachments (to others) or walk away."
+
+        "Yes":
+
+            "4a"
+
+        "no":
+
+            jump contala
+
+    menu:
+
+        "Release your dreams (requires complete abandonment of self) or walk away."
+
+        "Yes":
+
+            jump winala
+
+        "no":
+
+            jump winala
+
+
+label contala:
+
+    "Norm battled with the contentment being offered. “How could this be wrong?” he asked no one in particular. He felt so much lighter."
+
+    "But he was also beginning to feel untethered—a small boat, knot undone, un-anchored, oarless, drifting slowly away from shore."
+
+    "He glanced down at the lake and laughed at his reflection, which was enjoying a nice swim. Norm thought about joining in but found himself back on the beach, his bare feet sinking just a little into the warm, wet sand."
+
+    $ alevel += 1
+    $ levelsum += 1
+
+    if levelsum == 3:
+        jump codaala
+    elif mlevel == 1:
+        jump facegra
+    elif glevel == 1:
+        jump facemar
+
+    jump mar_or_gra
+
+
+label winala:
+
+    "Norm peers over the edge of the stone into the water. A faint outline looks back. Contentment has turned to melancholy. His release has been too effective. As he tries to place the face in the water, it fades to nothingness."
+
+    "Norm follows."
+
+return
+
+######## - after round 1 marble decides between b and c
+
+
+label gra_or_ala:
+    scene bg4
+    show twilight angry
+
+    menu:
+
+        "Granite":
+
+            jump granite
+
+        "Alabaster":
+
+            jump alabaster
+
+######## - after round 1 granite decides between a and c
+
+
+label mar_or_ala:
+    scene bg4
+    show twilight angry
+
+    t "Choosing between marble and alabaster in round 2."
+
+    menu:
+
+        "Black marble":
+
+            jump marble
+
+        "Alabaster":
+
+            jump alabaster
+
+######## - after round 1 alabaster decides between a and b
+
+
+label mar_or_gra:
+    scene bg4
+    show twilight angry
+
+    t "Choosing between marble and granite in round 2."
+
+    menu:
+
+        "I wonder what I'll choose?"
+
+        "Black marble":
+
+            jump marble
+
+        "Granite":
+
+            jump granite
+
+######## - after round 2 faces marble
+
+
+label facemar:
+    scene bg4
+    show twilight angry
+
+    t "This is facing the marble path in round 3."
+
+    jump marble
+
+######## - after round 2 faces granite
+
+
+label facegra:
+    scene bg4
+    show twilight angry
+
+    t "This is facing the granite path in round 3."
+
+jump granite
+
+######## - after round 2 faces alabaster
+
+
+label faceala:
+    scene bg4
+    show twilight angry
+
+    t "This is facing the alabaster path in round 3."
+
+    jump alabaster
+
+######## - marble coda
+
+label codamar:
+    scene
+
+    "marble coda"
+
+    jump end
+
+######## - granite coda
+
+label codagra:
+    scene
+
+    "granite coda"
+
+    jump end
+
+######## - alabaster coda
+
+label codaala:
+    scene
+
+    "alabaster coda"
+
+    jump end
+
+######## - end scene
+
+
+label end:
+    scene bg4
+    show twilight angry
+
+    t "This is the final scene."
+
+    "Finding joy in yourself, without losing sight of others. Giving to others without losing sight of yourself. Accepting what may come without giving away your dreams."
+
+
+return

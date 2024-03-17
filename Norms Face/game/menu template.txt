@@ -1,0 +1,85 @@
+### Choice mar2
+
+    menu:
+
+## Yes
+
+        "Minecraft binge":
+
+## Roll for agreement
+            $ m2y = renpy.random.randint(1,6)
+
+## mar2yes Up
+            if m2y >= 2:
+                show thumbup zorder 9:
+                    xalign 1.0
+                    yalign 0.0
+                with Dissolve(1.0)
+
+                show friends:
+                    alpha 0.3
+                $ renpy.music.set_volume(1.0, delay=1.0, channel='mar2')
+
+                "Yes text"
+
+                hide thumbup
+                with Dissolve(1.0)
+
+## mar2yes Down
+            else:
+                show thumbdown zorder 9:
+                    xalign 1.0
+                    yalign 0.0
+                with Dissolve(1.0)
+
+                "No anyway text"
+
+                hide thumbdown
+                with Dissolve(1.0)
+
+                if glevel == 1:
+                    jump mar_or_ala
+                elif alevel == 1:
+                    jump mar_or_gra
+
+                jump redor1
+
+## No
+
+        "close the book":
+
+## Roll for agreement
+            $ m2n = renpy.random.randint(1,6)
+
+## mar2no Up
+            if m2n >= 2:
+                show thumbup zorder 9:
+                    xalign 1.0
+                    yalign 0.0
+                with Dissolve(1.0)
+
+                "Norm doesn't feel up to it. Upon closing the book he finds himself back at the beach."
+
+                hide thumbup
+                with Dissolve(1.0)
+
+                if glevel == 1:
+                    jump mar_or_ala
+                elif alevel == 1:
+                    jump mar_or_gra
+
+                jump redor1
+
+            else:
+
+## mar2no Down
+
+                show thumbdown zorder 9:
+                    xalign 1.0
+                    yalign 0.0
+                with Dissolve(1.0)
+
+                "Yes anyway text"
+
+                hide thumbdown
+                with Dissolve(1.0)

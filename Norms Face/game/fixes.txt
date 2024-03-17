@@ -1,0 +1,22 @@
+Fixes:
+
+Marble
+ book should close before "He closes the book."
+ "Maybe I should take a little less 'me time' and a little more 'we time'," Norm considered.
+
+Alabaster
+ improve the contala script
+
+Coda
+ piano fades too quickly during the revisit
+ the "You know, I think I did" line is still clumsy
+
+
+
+
+Optimizations
+
+Make paths clickable
+
+Alabaster
+ add more context to menu items, to match other paths
